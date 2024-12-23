@@ -51,7 +51,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-60 fixed min-h-screen bg-white space-y-5 p-4">
+    <aside className="w-60 fixed min-h-screen bg-white space-y-5 p-4 max-sm:hidden">
       <div className="flex justify-center  gap-3">
         <Ant className="size-7" />
         {/* <img src={Ant} alt="" className="size-7" /> */}
@@ -65,7 +65,7 @@ const Sidebar = () => {
           <option value="Monkey D. Luffy">Monkey D. Luffy </option>
         </select>
       </div>
-      <div className="flex flex-col gap-3 relative">
+      <nav className="flex flex-col gap-3 relative">
         {Menus.map((menu, i) => (
           <NavLink
             to={menu.link}
@@ -80,7 +80,7 @@ const Sidebar = () => {
             <h2>{menu.name}</h2>
           </NavLink>
         ))}
-      </div>
+      </nav>
     </aside>
   );
 };
