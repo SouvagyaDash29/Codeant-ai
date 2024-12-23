@@ -7,19 +7,19 @@ const RepositorySection = () => {
 	<div className="">
 		{Data.map((data, i)=> (
 			
-		<div className="pl-6 font-inter py-4 border-t-2">
+		<div key={i} className="pl-6 font-inter py-4 border-t-2">
 			<div className="flex items-center gap-5 mb-3">
 				<h1 className="text-lg font-medium">
 					{data.name}
 				</h1>
-				<span class=" bg-blue-100 text-blue-600 text-xs font-medium px-2.5 py-0.5 rounded-full">
+				<span className=" bg-blue-100 text-blue-600 text-xs font-medium px-2.5 py-0.5 rounded-full">
                 	{data.access}
             	</span>
 			</div>
 			<div className="flex gap-12 text-sm font-normal">
-			<span class="inline-flex items-center ">
+			<span className="inline-flex items-center ">
                 {data.language}
-                <span class="size-1.5 ml-3 bg-sky-600 rounded-full"></span>
+                <span className="size-1.5 ml-3 bg-sky-600 rounded-full"></span>
             </span>
 				<div className="inline-flex items-center gap-4">
 					<Database />

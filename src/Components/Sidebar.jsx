@@ -51,7 +51,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <sidebar className="w-60 fixed min-h-screen bg-white space-y-5 p-4">
+    <aside className="w-60 fixed min-h-screen bg-white space-y-5 p-4">
       <div className="flex justify-center  gap-3">
         <Ant className="size-7" />
         {/* <img src={Ant} alt="" className="size-7" /> */}
@@ -61,7 +61,7 @@ const Sidebar = () => {
       </div>
       <div className="flex justify-center">
         <select className="border border-zinc-300 rounded px-5 py-1 focus:border-zinc-300 active:border-zinc-300">
-          <option selected>Souvagy Ranjan Dash</option>
+          <option defaultValue>Souvagy Ranjan Dash</option>
           <option value="Monkey D. Luffy">Monkey D. Luffy </option>
         </select>
       </div>
@@ -81,7 +81,7 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </div>
-    </sidebar>
+    </aside>
   );
 };
 
