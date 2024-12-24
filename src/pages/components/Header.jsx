@@ -1,6 +1,7 @@
 import React from "react";
 import Plus from "../../Assets/Plus";
 import Refresh from "../../Assets/Refresh";
+import Repository from "../../Data/RepositoriesData";
 
 const Header = () => {
 
@@ -10,11 +11,11 @@ const Header = () => {
      
       
 
-      <div className="p-6 ">
+      <div className="px-6 ">
         <div className="flex justify-between max-sm:flex-col ">
           <div className="">
             <h1 className="text-xl font-inter font-semibold">Repositories</h1>
-            <h5 className="text-sm text-gray-700 ">33 total repositories</h5>
+            <h5 className="text-sm text-gray-700 ">{Repository.length} total repositories</h5>
           </div>
           {/* <div className="drop-shadow-sm flex gap-3.5 text-sm max-sm:mt-4"> */}
           <div className="flex gap-3.5 text-sm max-sm:mt-4">

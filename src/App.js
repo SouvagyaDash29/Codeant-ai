@@ -8,7 +8,7 @@ import CloudSecurity from "./pages/CloudSecurity";
 import HowtoUse from "./pages/HowtoUse";
 import Settings from "./pages/Settings";
 import Support from "./pages/Support";
-import Logout from "./Auth/Logout";
+import Logout from "./pages/Logout";
 
 function App() {
   return (

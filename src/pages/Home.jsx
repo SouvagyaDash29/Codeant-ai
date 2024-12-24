@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from './components/Header'
-import Search from '../Assets/search.svg'
+import Search from '../Assets/Search'
 import Data from "../Data/RepositoriesData"
 import RepositoryCard from './components/RepositoryCard';
 
@@ -17,19 +17,21 @@ const Home = () => {
     };
 
   return (
-	<div className=''>
+	<div className='mt-10 lg:mt-6'>
 		<Header />
-		<form className="relative ml-6">
-			<img src={Search} alt=""  className='absolute top-2.5 left-3'/>
+		<div className="relative px-6 ">
+            <div className="absolute inset-y-0 left-6 start-0 flex items-center ps-3 pointer-events-none ">
+              <Search  />
+            </div>
             <input
-              type="search"
+              type="text"
               id="search"
-			  onChange={(e) => setQuery(e.target.value)}
+              onChange={(e)=>{setQuery(e.target.value)}}
               className="block py-2 ps-10 text-sm mt-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 w-96 max-sm:w-full"
               placeholder="Search Repositories"
               required
-			  />
-		</form>
+            />
+          </div>
 
 		<div className="mt-5">
 			<RepositoryCard repo={filter(Data)} />

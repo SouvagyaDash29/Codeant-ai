@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../Components/Sidebar';
-import Header from '../pages/components/Header';
 import { Outlet } from 'react-router';
 import MobileViewSidebar from '../Components/MobileViewSidebar';
 
@@ -22,12 +21,12 @@ const Dashboard = () => {
         <Sidebar />
       </div>
     ) : (
-      <div className="block lg:hidden">
+      <div className="z-10 block lg:hidden">
         <MobileViewSidebar />
       </div>
     )}
-    <div className="bg-zinc-50 w-full lg:p-4 rounded-md divide-y lg:ml-[14rem] ml-0 max-sm:p-0">
-     <div className="bg-white border border-neutral-200 rounded-lg max-lg:pt-4 ">
+    <div className="bg-zinc-50 w-full h-screen lg:p-4 rounded-md divide-y lg:ml-[16rem] max-sm:p-0">
+     <div className="bg-white border border-neutral-200 rounded-lg h-full max-lg:pt-4 ">
       <Outlet />
      </div>
     </div>

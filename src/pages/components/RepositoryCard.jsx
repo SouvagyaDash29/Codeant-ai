@@ -7,7 +7,7 @@ const RepositoryCard = ({repo}) => {
 	<div className="">
 		{repo.map((data, i)=> (
 			
-		<div key={i} className="pl-6 font-inter py-4 border-t-2">
+		<div key={i} className="pl-6 font-inter py-4 border-t-2 hover:bg-[#F5F5F5]">
 			<div className="flex items-center gap-5 mb-3">
 				<h1 className="text-lg font-medium">
 					{data.name}

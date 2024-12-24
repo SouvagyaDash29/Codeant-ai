@@ -51,7 +51,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-60 fixed min-h-full bg-white space-y-5 p-4 max-sm:hidden">
+    <aside className="w-60 fixed min-h-full bg-white space-y-5 p-3 max-sm:hidden">
       <div className="flex justify-center  gap-3">
         <Ant className="size-7" />
         {/* <img src={Ant} alt="" className="size-7" /> */}
@@ -62,7 +62,7 @@ const Sidebar = () => {
       <div className="flex justify-center">
         <select className="border border-zinc-300 rounded px-5 py-1 focus:border-zinc-300 active:border-zinc-300">
           <option defaultValue>Souvagy Ranjan Dash</option>
-          <option value="Monkey D. Luffy">Monkey D. Luffy </option>
+          <option value="Monkey D. Luffy">Choose another account </option>
         </select>
       </div>
       <nav className="flex flex-col gap-3 relative">
@@ -70,7 +70,7 @@ const Sidebar = () => {
           <NavLink
             to={menu.link}
             className={({ isActive }) =>
-              `flex items-center text-sm gap-3.5 font-medium p-2 rounded ${
+              `flex items-center text-sm gap-3.5 font-medium p-2 rounded-lg ${
                 menu.margin ? "mt-64" : ""
               } ${isActive ? "bg-blue-600 text-white" : "hover:bg-gray-100"}`
             }
