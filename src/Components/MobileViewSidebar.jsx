@@ -10,9 +10,11 @@ import Settings from "../Assets/Setting";
 import Logout from "../Assets/Logout";
 import Phone from "../Assets/phone";
 import Close from "../Assets/Close";
+import ConfirmationDialog from "./ConfirmationDialog";
 
 const MobileViewSidebar = () => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -25,7 +27,7 @@ const MobileViewSidebar = () => {
     { name: "How to Use", link: "/How-to-Use", icon: <Book /> },
     { name: "Settings", link: "/Settings", icon: <Settings /> },
     { name: "Support", link: "/Support", icon: <Phone />, margin: true },
-    { name: "Logout", link: "/Logout", icon: <Logout /> },
+  
   ];
 
   return (
@@ -51,6 +53,7 @@ const MobileViewSidebar = () => {
           isNavbarOpen ? "translate-y-0" : "-translate-y-[130%]"
         } transition-transform duration-700 bg-white border border-gray-300 rounded-lg`}
       >
+
         <div className="px-2">
           <select className="mt-3 w-full font-medium text-base border-2 border-zinc-300 rounded-md p-2 text-gray-700">
             <option defaultValue>Souvagya Ranjan Dash</option>
@@ -58,10 +61,12 @@ const MobileViewSidebar = () => {
           </select>
         </div>
 
+
         <nav className="flex flex-col gap-3 p-2">
           {Menus.map((menu, i) => (
             <NavLink
               to={menu.link}
+              onClick={toggleSidebar} 
               className={({ isActive }) =>
                 `flex items-center text-sm gap-3.5 font-medium p-2 rounded-lg ${
                   isActive ? "bg-blue-600 text-white" : "hover:bg-gray-100"
@@ -74,7 +79,23 @@ const MobileViewSidebar = () => {
             </NavLink>
           ))}
         </nav>
+
+
+        {/* Logout Button */}
+      <button
+        onClick={() => setIsDialogOpen(true)}
+        className=" w-full flex items-center text-sm gap-3.5 font-medium p-2 pl-4 rounded-l"
+      >
+        <Logout />
+        Logout
+      </button>
       </div>
+      <ConfirmationDialog
+        isOpen={isDialogOpen}
+        title="Logout"
+        message="Are you sure you want to Logout."
+        onCancel={() => setIsDialogOpen(false)}
+        />
     </div>
   );
 };

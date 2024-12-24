@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import mainlogo from "../Assets/mainlogo.svg";
 import LogoTobeusedInSignINLeft from "../Assets/LogoTobeusedInSignINLeft.svg";
@@ -19,16 +20,19 @@ const Signin = () => {
   ]
 
   const authLoginMethods = (methods) =>{
+    localStorage.setItem("User", 'true');
+      window.location.reload();
+
     if(methods === 'github'){
-      window.location.href = `/`;
+      // window.location.href = `https://www.google.com/search?q=github.com`;
     }else if(methods === 'bitbucket'){
-      window.location.href = `https://www.google.com/search?q=bitbucket.com`;
+      // window.location.href = `https://www.google.com/search?q=bitbucket.com`;
     }else if(methods === 'Azure'){
-      window.location.href = `https://www.google.com/search?q=azure.com`;
+      // window.location.href = `https://www.google.com/search?q=azure.com`;
     }else if(methods === 'gitlab'){
-      window.location.href = `https://www.google.com/search?q=gitlab.com`;
+      // window.location.href = `https://www.google.com/search?q=gitlab.com`;
     }else if(methods === 'sso'){
-      window.location.href = `https://www.google.com/search?q=sso`;
+      // window.location.href = `https://www.google.com/search?q=sso`;
     }else{
       window.location.href = `/`;
     }

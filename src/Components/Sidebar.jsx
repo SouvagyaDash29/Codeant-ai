@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Ant from "../Assets/Ant";
 import Home from "../Assets/Home";
 import Code from "../Assets/Code";
@@ -9,8 +9,11 @@ import Logout from "../Assets/Logout";
 import Phone from "../Assets/phone";
 
 import { NavLink } from "react-router";
+import ConfirmationDialog from "./ConfirmationDialog";
 
 const Sidebar = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const Menus = [
     {
       name: "Repositories",
@@ -43,28 +46,25 @@ const Sidebar = () => {
       icon: <Phone />,
       margin: true,
     },
-    {
-      name: "Logout",
-      link: "/Logout",
-      icon: <Logout />,
-    },
   ];
 
   return (
-    <aside className="w-60 fixed min-h-full bg-white space-y-5 p-3 max-sm:hidden">
+    <aside className="w-64 fixed min-h-full bg-white space-y-5 p-3 max-sm:hidden">
+
       <div className="flex justify-center  gap-3">
         <Ant className="size-7" />
-        {/* <img src={Ant} alt="" className="size-7" /> */}
         <h1 className="text-black font-Roboto font-light text-2xl tracking-wide">
           CodeAnt AI
         </h1>
       </div>
+
       <div className="flex justify-center">
         <select className="border border-zinc-300 rounded px-5 py-1 focus:border-zinc-300 active:border-zinc-300">
           <option defaultValue>Souvagy Ranjan Dash</option>
           <option value="Monkey D. Luffy">Choose another account </option>
         </select>
       </div>
+
       <nav className="flex flex-col gap-3 relative">
         {Menus.map((menu, i) => (
           <NavLink
@@ -81,6 +81,21 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </nav>
+      
+{/* LogOut Button */}
+      <button
+        onClick={() => setIsDialogOpen(true)}
+        className=" w-full flex items-center text-sm gap-3.5 font-medium p-2 rounded-l"
+      >
+        <Logout />
+        Logout
+      </button>
+      <ConfirmationDialog
+        isOpen={isDialogOpen}
+        title="Logout"
+        message="Are you sure you want to Logout."
+        onCancel={() => setIsDialogOpen(false)}
+      />
     </aside>
   );
 };

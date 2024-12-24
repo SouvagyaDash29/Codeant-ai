@@ -19,8 +19,8 @@ const Home = () => {
   return (
 	<div className='mt-10 lg:mt-6'>
 		<Header />
-		<div className="relative px-6 ">
-            <div className="absolute inset-y-0 left-6 start-0 flex items-center ps-3 pointer-events-none ">
+		<div className=" px-6 ">
+            <div className="relative top-10 flex items-center ps-3 pointer-events-none ">
               <Search  />
             </div>
             <input
