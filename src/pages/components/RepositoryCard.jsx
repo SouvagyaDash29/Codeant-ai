@@ -1,11 +1,11 @@
 import React from "react";
-import Database from "../Assets/Database";
-import Data from "../Data/RepositoriesData"
+import Database from "../../Assets/Database";
 
-const RepositorySection = () => {
+
+const RepositoryCard = ({repo}) => {
   return (
 	<div className="">
-		{Data.map((data, i)=> (
+		{repo.map((data, i)=> (
 			
 		<div key={i} className="pl-6 font-inter py-4 border-t-2">
 			<div className="flex items-center gap-5 mb-3">
@@ -13,7 +13,7 @@ const RepositorySection = () => {
 					{data.name}
 				</h1>
 				<span className=" bg-blue-100 text-blue-600 text-xs font-medium px-2.5 py-0.5 rounded-full">
-                	{data.access}
+                	{data.accessType}
             	</span>
 			</div>
 			<div className="flex gap-10 max-sm:gap-5 text-sm font-normal">
@@ -35,4 +35,4 @@ const RepositorySection = () => {
   );
 };
 
-export default RepositorySection;
+export default RepositoryCard;

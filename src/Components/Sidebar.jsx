@@ -19,12 +19,12 @@ const Sidebar = () => {
     },
     {
       name: "AI Code Review",
-      link: "/code",
+      link: "/AiCodeReview",
       icon: <Code />,
     },
     {
       name: "Cloud Security",
-      link: "/cloud",
+      link: "/CloudSecurity",
       icon: <Cloud />,
     },
     {
@@ -34,24 +34,24 @@ const Sidebar = () => {
     },
     {
       name: "Settings",
-      link: "/setting",
+      link: "/Settings",
       icon: <Settings />,
     },
     {
-      name: "Logout",
-      link: "/logout",
-      icon: <Logout />,
+      name: "Support",
+      link: "/Support",
+      icon: <Phone />,
       margin: true,
     },
     {
-      name: "Support",
-      link: "/support",
-      icon: <Phone />,
+      name: "Logout",
+      link: "/Logout",
+      icon: <Logout />,
     },
   ];
 
   return (
-    <aside className="w-60 fixed min-h-screen bg-white space-y-5 p-4 max-sm:hidden">
+    <aside className="w-60 fixed min-h-full bg-white space-y-5 p-4 max-sm:hidden">
       <div className="flex justify-center  gap-3">
         <Ant className="size-7" />
         {/* <img src={Ant} alt="" className="size-7" /> */}
